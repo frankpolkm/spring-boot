@@ -34,5 +34,8 @@ public class EmployeeControllerTest {
 		Assert.assertNotNull(e);
 		Assert.assertEquals("Tom", e.getFirstName());
 		Assert.assertEquals("Cate", e.getLastName());
+		
+		Mockito.verify(er).findOne((long)1001);
+		Mockito.verify(er, Mockito.never()).findOne((long)1002);
 	}
 }
